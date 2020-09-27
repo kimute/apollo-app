@@ -14,7 +14,8 @@ Movie app built with Apollo, GraphQL and React
 https://www.apollographql.com/docs/react/data/queries/
 
 ・CSS を reset
-
+・Optinal chaning
+  - JSをよりスマートに書ける
 ## GraphQL API
 
 以下のAPIをApollo　clientに入れて Movieデーターを取得

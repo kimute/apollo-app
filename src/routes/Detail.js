@@ -65,22 +65,22 @@ export default () => {
   //warning:直接{data.movie.title}のように角のエラーを吐き出す。
   // 必ずloadingの処理すること
 
+  //Optional chaining的に書く
+  //→loadingをチェックする必要がなくなる
   return (
     <Container>
       <Column>
         <Title>{loading ? "loading..." : data.movie.title} </Title>
-        {!loading && data.movie && (
-          <>
-            <Subtitle>
-              {data.movie.language} score:{data.movie.rating}
-            </Subtitle>
-            <Description>{data.movie.description_intro}</Description>
-          </>
-        )}
+        {/* {!loading && data.movie && ( */}
+        <>
+          <Subtitle>
+            {data?.movie?.language} score:{data?.movie?.rating}
+          </Subtitle>
+          <Description>{data?.movie?.description_intro}</Description>
+        </>
+        {/* )} */}
       </Column>
-      <Poster
-        bg={data && data.movie ? data.movie.medium_cover_image : ""}
-      ></Poster>
+      <Poster bg={data?.movie?.medium_cover_image}></Poster>
     </Container>
   );
 };
